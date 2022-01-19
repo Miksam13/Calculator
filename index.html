@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<style type="text/css">
+		a {
+			text-align: center;
+  			font-family: 'Titillium Web', sans-serif;
+  			font-size: 40px;
+		}
+		.calculator{
+			text-align: center;
+			margin-top: 100px;
+		}
+		.calc_but{
+			width: 100px;
+			height: 100px;
+		}
+		.calc_but_null{
+			width: 203px;
+			height: 100px;
+		}
+		.calc_but_end{
+			width: 203px;
+			height: 100px;
+		}
+		input{
+			width: 402px;
+			height: 50px;
+			font-size: 40px;
+		}
+	</style>
+	<div class="calculator">
+		<div class="pole">
+			<form name="form">
+				<input name="textview" type="text">
+			</form>
+			<button id="one" class="calc_but" onclick="text('1')"><a>1</a></button>
+  			<button id="two" class="calc_but" onclick="text('2')"><a>2</a></button>
+  			<button id="three" class="calc_but" onclick="text('3')"><a>3</a></button>
+			<button id="plus" class="calc_but" onclick="text('+')"><a>+</a></button>
+			<br>
+			<button id="four" class="calc_but" onclick="text('4')"><a>4</a></button>
+  			<button id="fife" class="calc_but" onclick="text('5')"><a>5</a></button>
+  			<button id="six" class="calc_but" onclick="text('6')"><a>6</a></button>
+  			<button id="minus" class="calc_but" onclick="text('-')"><a>-</a></button>
+  			<br>
+  			<button id="seven" class="calc_but" onclick="text('7')"><a>7</a></button>
+  			<button id="eight" class="calc_but" onclick="text('8')"><a>8</a></button>
+  			<button id="nine" class="calc_but" onclick="text('9')"><a>9</a></button>
+  			<button id="times" class="calc_but" onclick="text('*')"><a>x</a></button>
+  			<br>
+  			<button id="zero" class="calc_but_null" onclick="text('0')"><a>0</a></button>
+  			<button id="point" class="calc_but" onclick="text('.')"><a>.</a></button>
+  			<button id="divide" class="calc_but" onclick="text('/')"><a>:</a></button>
+  			<br>
+  			<button id="null" class="calc_but_end" onclick="clean()"><a>C</a></button>
+  			<button id="smooth" class="calc_but_end" onclick="vivod_resultata()"><a>=</a></button>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function text(num){
+			document.form.textview.value += num
+		}
+
+		function clean(){
+			document.form.textview.value = ""
+		}
+
+		function vivod_resultata(){
+			let resultat = document.form.textview.value
+
+			if(resultat){
+				document.form.textview.value = eval(resultat)
+			}
+		}
+	</script>
+</body>
+</html>
